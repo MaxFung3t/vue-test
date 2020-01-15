@@ -1,0 +1,22 @@
+{
+    "test": {
+        "cdnUrl": "https://file-test.jidaihome.com/",
+        "ignorePaths": {
+            "assets": "25896199"
+        }
+    },
+    "qa": {
+        "cdnUrl": "https://file-test.jidaihome.com/",
+        "ignorePaths": {
+            "assets": "25896203"
+        }
+    },
+    "prod": {
+        "cdnUrl": "https://statics.jidaihome.com/",
+        "ignorePaths": {
+            "assets": "25896105"
+        }
+    },
+    "publicPath": "public-path/",
+    "appName": "loan-h5"
+}
