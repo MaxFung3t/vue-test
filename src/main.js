@@ -13,7 +13,6 @@ Vue.component(Button.name, Button)
 Vue.component(Checkbox.name, Checkbox)
 import Loading from './components/Loading';
 import store from './store'
-
 Vue.use(Loading)
 
 new Vue({
