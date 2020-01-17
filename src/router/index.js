@@ -3,6 +3,7 @@ import Router from 'vue-router';
 // 如果有嵌套路由的话，分模块去写路由配置
 import homeRouter from './home';
 import testRouter from './test';
+import clickRouter from './click';
 Vue.use(Router);
 
 export default new Router({
@@ -22,6 +23,7 @@ export default new Router({
             name:'class',
             component: () => import('@/views/Class')
         },
+        ...clickRouter,
         {
             path: '/',
             redirect: 'home'

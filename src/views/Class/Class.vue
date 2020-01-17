@@ -12,11 +12,9 @@
         <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
         <!-- 第六种 -->
         <div v-bind:class="[{ active: isActive }, errorClass]"></div>
-
         <!-- 绑定内联样式 -->
         <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
         <div v-bind:style="styleObject"></div>
-
         <!-- 切换 loginType 将不会清除用户已经输入的内容,因为两个模板使用了相同的元素.想要不一样，只需添加一个具有唯一值的 key 属性即可 -->
         <div>
             <template v-if="loginType === 'username'">
@@ -29,33 +27,30 @@
             </template>
             <button @click="toggle">toggle</button>
         </div>
-
         <!-- 永远不要把 v-if 和 v-for 同时用在同一个元素上。 -->
         <!-- 哪怕我们只渲染出一小部分用户的元素，也得在每次重渲染的时候遍历整个列表，不论活跃用户是否发生了变化。 -->
         <!-- <ul>
             <li v-for="lis in changeList" :key="lis.id">{{ lis.name }}</li>
         </ul> -->
-		<ul c-if="list.show">
+        <ul c-if="list.show">
             <li v-for="lis in list" :key="lis.id">{{ lis.name }}</li>
         </ul>
         <!-- Vue数组更新检测 -->
         <ul>
             <li v-for="(item,key) in items" :key="key">{{ item }}</li>
         </ul>
-
         <!-- Vue不能检测对象属性的添加或删除 -->
         <ul>
             <li v-for="(item,key) in userProfile" :key="key">{{key}}-{{ item }}</li>
         </ul>
         <div @click="adde()">click</div>
-
         <!-- 显示过滤/排序后的结果 -->
         <!-- 原始数组 -->
-        <li v-for="n in numbers">{{ n }}</li>
-		<!-- 在computed使用evenNumbers -->
-        <li v-for="n in evenNumbers">{{ n }}</li>
+        <li v-for="(n,i) in numbers" :key="'first-'+ i">{{ n }}</li>
+        <!-- 在computed使用evenNumbers -->
+        <li v-for="(n,i) in evenNumbers" :key="'sec-'+i">{{ n }}</li>
         <!-- 在methods使用even方法 -->
-        <li v-for="n in ev(numbers)">{{ n }}</li>
+        <li v-for="(n,i) in ev(numbers)" :key="'third-'+i">{{ n }}</li>
     </div>
 </template>
 <script>
@@ -114,7 +109,7 @@ export default {
             //
             console.log(this.userProfile)
         },
-        ev: function(numbers) {
+        ev(numbers) {
             return numbers.filter(function(number) {
                 return number % 2 === 0
             })
