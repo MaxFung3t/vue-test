@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import Sync from '@/components/Sync/Sync.vue'
 import './axios';
 import './assets/css/reset.css'
 Vue.config.productionTip = false
@@ -14,7 +15,7 @@ Vue.component(Checkbox.name, Checkbox)
 import Loading from './components/Loading';
 import store from './store'
 Vue.use(Loading)
-
+Vue.component('myComponent', Sync)
 new Vue({
     router,
     store,
