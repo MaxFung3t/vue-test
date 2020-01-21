@@ -1,4 +1,5 @@
 <template>
+    <!-- .sync修饰符 -->
     <div v-if="show">
         <p>默认初始值是{{show}}，所以是显示的</p>
         <button @click.stop="closeDiv">关闭</button>
@@ -8,15 +9,13 @@
 export default {
     data() {
         return {
-          bool:{
-            aaa:false
-          }
+            isShow: false
         }
     },
     props: ['show'],
     methods: {
         closeDiv() {
-            this.$emit('update:show', this.bool); //触发 input 事件，并传入新值
+            this.$emit('update:show', this.isShow); //触发 input 事件，并传入新值
         }
     }
 };
