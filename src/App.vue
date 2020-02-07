@@ -8,7 +8,8 @@
             <router-link to="/about">About|</router-link>
             <router-link to="/test">Test|</router-link>
             <router-link to="/class">Class|</router-link>
-            <router-link to="/click">Click</router-link>
+            <router-link to="/click">Click|</router-link>
+            <router-link to="/group">Group</router-link>
         </div>
         <router-view />
     </div>

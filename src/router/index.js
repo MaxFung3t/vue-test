@@ -25,6 +25,11 @@ export default new Router({
         },
         ...clickRouter,
         {
+            path:'/Group',
+            name:'group',
+            component: () => import('@/views/Group')
+        },
+        {
             path: '/',
             redirect: 'home'
         },
