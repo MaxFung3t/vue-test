@@ -6,7 +6,7 @@
         <div>.sync 修饰符</div>
         <button @click="changeValue">toggle</button>
         <!-- 第一种：原始写法 -->
-        <Sync :isShow='valueChild' @update:isShow='val=> valueChild = val' style="width:300px;height:200px;padding: 30px 20px 30px 5px;border:1px solid #ddd;margin: 0 auto;"></Sync>
+        <!-- <Sync :isShow='valueChild' @update:isShow='val=> valueChild = val' style="width:300px;height:200px;padding: 30px 20px 30px 5px;border:1px solid #ddd;margin: 0 auto;"></Sync> -->
 
         <!-- 第二种：v-bind:isShow.sync带参数写法 -->
         <!-- <Sync :isShow.sync='valueChild' style="width:300px;height:200px;padding: 30px 20px 30px 5px;border:1px solid #ddd;margin: 0 auto;"></Sync> -->
@@ -15,7 +15,7 @@
         <!-- 这样会把 doc 对象中的每一个属性 (如 title) 都作为一个独立的 prop 传进去，然后各自添加用于更新的 v-on 监听器。 -->
         <!-- 注意：与组件的v-model类似 -->
         <!-- 第三种：v-bind.sync不带参数写法 -->
-        <!-- <Sync v-bind.sync="doc" style="width:300px;height:200px;padding: 30px 20px 30px 5px;border:1px solid #ddd;margin: 0 auto;"></Sync> -->
+        <Sync v-bind.sync="doc" style="width:300px;height:200px;padding: 30px 20px 30px 5px;border:1px solid #ddd;margin: 0 auto;"></Sync>
 
 
         <div>.prop 修饰符</div>
@@ -101,8 +101,8 @@ export default {
             console.log('111')
         },
         changeValue() {
-            this.valueChild =!this.valueChild;  //v-bind:isShow.sync 带参数进行传递时
-            //this.doc.isShow = !this.doc.isShow;   //v-bind.sync  不带参数进行传递时
+            // this.valueChild =!this.valueChild;  //v-bind:isShow.sync 带参数进行传递时
+            this.doc.isShow = !this.doc.isShow;   //v-bind.sync  不带参数进行传递时
         }
     }
 }

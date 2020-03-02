@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Sync from '@/components/Sync/Sync.vue'
-import BlogPost from '@/components/BlogPost/BlogPost.vue'
+import Vmodel from '@/components/Vmodel/Vmodel.vue'
+import SlotContent from '@/components/SlotContent/SlotContent.vue'
 import './axios';
 import './assets/css/reset.css'
 Vue.config.productionTip = false
@@ -10,9 +11,10 @@ Vue.config.productionTip = false
 import { Button, Checkbox } from 'ant-design-vue'
 Vue.component(Button.name, Button)
 Vue.component(Checkbox.name, Checkbox)
+Vue.component('slot-content', SlotContent)
 Vue.component('Sync', Sync)
-// Vue.component('blog-post', BlogPost)
-Vue.component('custom-input', BlogPost)
+// Vue.component('Vmodel', Vmodel)
+Vue.component('custom-input', Vmodel)
 import Loading from './components/Loading';
 import store from './store'
 Vue.use(Loading)

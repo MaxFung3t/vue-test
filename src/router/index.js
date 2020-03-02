@@ -29,6 +29,11 @@ export default new Router({
             name:'group',
             component: () => import('@/views/Group')
         },
+		{
+			path:'/Slot',
+			name:'slot',
+			component: () => import('@/views/Slot')
+		},
         {
             path: '/',
             redirect: 'home'

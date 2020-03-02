@@ -6,16 +6,19 @@
         </button>
         <div v-html="post.content"></div>
     </div> -->
-    <div class="blog-post">
-        <input v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
+    <div class="vmodel">
+        <input class="v_model" v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
     </div>
 </template>
 <script>
 export default {
-    name: "blog-post",
+    name: "vmodel",
     // props: ['post']
     props: ['value']
 };
 </script>
 <style scoped lang="scss">
+	.v_model{
+		border:1px solid red;
+	}
 </style>

@@ -9,7 +9,8 @@
             <router-link to="/test">Test|</router-link>
             <router-link to="/class">Class|</router-link>
             <router-link to="/click">Click|</router-link>
-            <router-link to="/group">Group</router-link>
+            <router-link to="/group">Group|</router-link>
+			<router-link to="/slot">Slot</router-link>
         </div>
         <router-view />
     </div>
