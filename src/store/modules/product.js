@@ -8,7 +8,6 @@ const state = {
 const getters = {
 
 }
-
 const actions = {
     getProduct({
         commit

@@ -3,7 +3,7 @@
         <ul>
             <li v-for="cart in cartList" :key="cart.id">
                 <a-checkbox :checked="cart.checked" @change="changeChecked(cart)">{{cart.title}}</a-checkbox>
-                 - ${{cart.price}} - 
+                 - ${{cart.price}} -
                 <a-button @click="decrease(cart)">-</a-button> {{cart.count}} 
                 <a-button @click="increase(cart)">+</a-button>
             </li>

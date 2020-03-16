@@ -34,6 +34,11 @@ export default new Router({
 			name:'slot',
 			component: () => import('@/views/Slot')
 		},
+		{
+			path:'/Prop',
+			name:'prop',
+			component: () => import('@/views/Prop')
+		},
         {
             path: '/',
             redirect: 'home'
