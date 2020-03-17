@@ -40,6 +40,11 @@ export default new Router({
 			component: () => import('@/views/Prop')
 		},
         {
+            path:'/Attrs',
+            name:'attrs',
+            component: () => import('@/views/Attrs')
+        },
+        {
             path: '/',
             redirect: 'home'
         },
